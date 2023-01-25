@@ -84,7 +84,9 @@ public class UtilsCpf {
     }   
 
     /**
-     * Método público estático para validar um número de CPF.
+     * Método público estático para validar um número de CPF.<br/>
+     * Algoritmo originalmente escrito na web por Wolmir Cezer Garbin em 17/Novembro/2017:
+     *     https://receitasdecodigo.com.br/java/classe-java-completa-para-gerar-e-validar-cpf-e-cnpj
      * @param numero Número do CPF que será validado.
      * @throws IllegalCpfException Caso o CPF informado seja inconsistente. 
      * @author Marcio Alves (marcioalv@yahoo.com.br).
