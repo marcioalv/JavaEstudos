@@ -95,83 +95,83 @@ public class UtilsCpf {
         //
         // Desformatar o número do CPF.
         //
-		String cpf = desformatar(numero);
+        String cpf = desformatar(numero);
         
         //
-		// Erro caso CPF seja composto uma sequência de números iguais.
+        // Erro caso CPF seja composto uma sequência de números iguais.
         //
         String[] valores = {"00000000000", "11111111111", "22222222222", "33333333333", "44444444444",
                             "55555555555", "66666666666", "77777777777", "88888888888", "99999999999"};
                             
         if (UtilsString.contem(cpf, valores)) {
-			throw new IllegalCpfException("O CPF informado não pode ser composto por uma sequência de números iguais!");
+            throw new IllegalCpfException("O CPF informado não pode ser composto por uma sequência de números iguais!");
         }
         
         //
         // Variáveis para a verificação.
         //        
-		char dig10, dig11;
-		int sm, i, r, num, peso;
+        char dig10, dig11;
+        int sm, i, r, num, peso;
 
         //
-		// Protege o codigo com um try para eventuais erros de conversao de tipo (int).
+        // Protege o codigo com um try para eventuais erros de conversao de tipo (int).
         //
-		try {
+        try {
             //
-			// Cálculo do primeiro dígito verificador (10).
+            // Cálculo do primeiro dígito verificador (10).
             //
-			sm = 0;
-			peso = 10;
-			for (i = 0; i < 9; i++) {
+            sm = 0;
+            peso = 10;
+            for (i = 0; i < 9; i++) {
                 //
-				// converte o i-ésimo caractere do CPF em um número:
-				//     por exemplo, transforma o caractere '0' no inteiro 0 (48 é a posicao de '0' na tabela ASCII).
+                // converte o i-ésimo caractere do CPF em um número:
+                //     por exemplo, transforma o caractere '0' no inteiro 0 (48 é a posicao de '0' na tabela ASCII).
                 //
-				num = (int) (cpf.charAt(i) - 48);
-				sm = sm + (num * peso);
-				peso = peso - 1;
-			}
+                num = (int) (cpf.charAt(i) - 48);
+                sm = sm + (num * peso);
+                peso = peso - 1;
+            }
 
-			r = 11 - (sm % 11);
-			if ((r == 10) || (r == 11))
-				dig10 = '0';
-			else
-				dig10 = (char) (r + 48); // Converte no respectivo caractere numérico.
-
-            //
-			// Cálculo do segundo dígito verificador (11).
-            //
-			sm = 0;
-			peso = 11;
-			for (i = 0; i < 10; i++) {
-				num = (int) (cpf.charAt(i) - 48);
-				sm = sm + (num * peso);
-				peso = peso - 1;
-			}
-
-			r = 11 - (sm % 11);
-			if ((r == 10) || (r == 11))
-				dig11 = '0';
-			else
-				dig11 = (char) (r + 48);
+            r = 11 - (sm % 11);
+            if ((r == 10) || (r == 11))
+                dig10 = '0';
+            else
+                dig10 = (char) (r + 48); // Converte no respectivo caractere numérico.
 
             //
-			// Verifica se os dígitos calculados conferem com os dígitos informados.
+            // Cálculo do segundo dígito verificador (11).
             //
-			if ((dig10 == cpf.charAt(9)) && (dig11 == cpf.charAt(10))) {
-				return;
+            sm = 0;
+            peso = 11;
+            for (i = 0; i < 10; i++) {
+                num = (int) (cpf.charAt(i) - 48);
+                sm = sm + (num * peso);
+                peso = peso - 1;
+            }
+
+            r = 11 - (sm % 11);
+            if ((r == 10) || (r == 11))
+                dig11 = '0';
+            else
+                dig11 = (char) (r + 48);
+
+            //
+            // Verifica se os dígitos calculados conferem com os dígitos informados.
+            //
+            if ((dig10 == cpf.charAt(9)) && (dig11 == cpf.charAt(10))) {
+                return;
             }
             
             //
             // Número do CPF inconsistente.
             //
             throw new IllegalCpfException("O número do CPF informado é inconsistente!");
-		} catch (InputMismatchException erro) {
+        } catch (InputMismatchException erro) {
             //
             // Número do CPF inconsistente.
             //            
             throw new IllegalCpfException("O número do CPF informado é inconsistente!");
-		}
+        }
     }
 
     /**
@@ -183,7 +183,7 @@ public class UtilsCpf {
      * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
      */
     public static void validar(long numero) throws IllegalCpfException {
-		String cpf = String.valueOf(numero);
+        String cpf = String.valueOf(numero);
         validar(cpf);
     }    
 }

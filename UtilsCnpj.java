@@ -67,7 +67,7 @@ public class UtilsCnpj {
         String cnpj = desformatar(String.valueOf(numero));
         return cnpj.substring(0, 2) + "." + cnpj.substring(2, 5) + "." + cnpj.substring(5, 8) + "/" + cnpj.substring(8, 12) + "-" + cnpj.substring(12, 14);
     }
-    
+
     /**
      * Método público estático para formatar um número de CNPJ.
      * @param numero Número do CNPJ que será formatado.
@@ -92,84 +92,84 @@ public class UtilsCnpj {
         //
         // Desformatar o número do CNPJ.
         //
-		String cnpj = desformatar(numero);
+        String cnpj = desformatar(numero);
         
         //
-		// Erro caso CNPJ seja composto uma sequência de números iguais.
+        // Erro caso CNPJ seja composto uma sequência de números iguais.
         //
         String[] valores = {"00000000000000", "11111111111111", "22222222222222", "33333333333333", "44444444444444",
                             "55555555555555", "66666666666666", "77777777777777", "88888888888888", "99999999999999"};
                             
         if (UtilsString.contem(cnpj, valores)) {
-			throw new IllegalCnpjException("O CNPJ informado não pode ser composto por uma sequência de números iguais!");
+            throw new IllegalCnpjException("O CNPJ informado não pode ser composto por uma sequência de números iguais!");
         }
         
         //
         // Variáveis para a verificação.
         // 
-		char dig13, dig14;
-		int sm, i, r, num, peso;
+        char dig13, dig14;
+        int sm, i, r, num, peso;
 
         //
-		// Protege o codigo com um try para eventuais erros de conversao de tipo (int).
+        // Protege o codigo com um try para eventuais erros de conversao de tipo (int).
         //
-		try {
+        try {
             //
-			// Cálculo do primeiro dígito verificador (13).
+            // Cálculo do primeiro dígito verificador (13).
             //
-			sm = 0;
-			peso = 2;
-			for (i = 11; i >= 0; i--) {
+            sm = 0;
+            peso = 2;
+            for (i = 11; i >= 0; i--) {
                 //
-				// converte o i-ésimo caractere do CNPJ em um número:
-				//     por exemplo, transforma o caractere '0' no inteiro 0 (48 é a posicao de '0' na tabela ASCII).
+                // converte o i-ésimo caractere do CNPJ em um número:
+                //     por exemplo, transforma o caractere '0' no inteiro 0 (48 é a posicao de '0' na tabela ASCII).
                 //
-				num = (int) (cnpj.charAt(i) - 48);
-				sm = sm + (num * peso);
-				peso = peso + 1;
-				if (peso == 10)
-					peso = 2;
-			}
+                num = (int) (cnpj.charAt(i) - 48);
+                sm = sm + (num * peso);
+                peso = peso + 1;
+                if (peso == 10)
+                    peso = 2;
+            }
 
-			r = sm % 11;
-			if ((r == 0) || (r == 1))
-				dig13 = '0';
-			else
-				dig13 = (char) ((11 - r) + 48);
-
-            //
-			// Cálculo do segundo dígito verificador (14).
-            //
-			sm = 0;
-			peso = 2;
-			for (i = 12; i >= 0; i--) {
-				num = (int) (cnpj.charAt(i) - 48);
-				sm = sm + (num * peso);
-				peso = peso + 1;
-				if (peso == 10)
-					peso = 2;
-			}
-
-			r = sm % 11;
-			if ((r == 0) || (r == 1))
-				dig14 = '0';
-			else
-				dig14 = (char) ((11 - r) + 48);
+            r = sm % 11;
+            if ((r == 0) || (r == 1))
+                dig13 = '0';
+            else
+                dig13 = (char) ((11 - r) + 48);
 
             //
-			// Verifica se os dígitos calculados conferem com os dígitos informados.
+            // Cálculo do segundo dígito verificador (14).
             //
-			if ((dig13 == cnpj.charAt(12)) && (dig14 == cnpj.charAt(13))) {
-				return;
+            sm = 0;
+            peso = 2;
+            for (i = 12; i >= 0; i--) {
+                num = (int) (cnpj.charAt(i) - 48);
+                sm = sm + (num * peso);
+                peso = peso + 1;
+                if (peso == 10)
+                    peso = 2;
+            }
+
+            r = sm % 11;
+            if ((r == 0) || (r == 1))
+                dig14 = '0';
+            else
+                dig14 = (char) ((11 - r) + 48);
+
+            //
+            // Verifica se os dígitos calculados conferem com os dígitos informados.
+            //
+            if ((dig13 == cnpj.charAt(12)) && (dig14 == cnpj.charAt(13))) {
+                return;
             }
 
             //
             // Número do CNPJ inconsistente.
             //
             throw new IllegalCnpjException("O número do CNPJ informado é inconsistente!");
-		} catch (InputMismatchException erro) {
+        } catch (InputMismatchException erro) {
             throw new IllegalCnpjException("O número do CNPJ informado é inconsistente!");
-		}        
+        }        
     }
 
     /**
@@ -181,7 +181,7 @@ public class UtilsCnpj {
      * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
      */
     public static void validar(long numero) throws IllegalCnpjException {
-		String cnpj = String.valueOf(numero);
+        String cnpj = String.valueOf(numero);
         validar(cnpj);
     }    
 }
