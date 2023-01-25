@@ -82,12 +82,12 @@ public class UtilsCnpj {
 
     /**
      * Método público estático para validar um número de CNPJ.<br/>
-     * Algoritmo originalmente escrito na web por Wolmir Cezer Garbin em 17/Novembro/2017:
-     *     https://receitasdecodigo.com.br/java/classe-java-completa-para-gerar-e-validar-cpf-e-cnpj     
      * @param numero Número do CNPJ que será validado.
      * @throws IllegalCnpjException Caso o CNPJ informado seja inconsistente. 
      * @author Marcio Alves (marcioalv@yahoo.com.br).
      * @version 1.0.0
+     * Algoritmo originalmente escrito na web por Wolmir Cezer Garbin em 17/Novembro/2017:
+     *     https://receitasdecodigo.com.br/java/classe-java-completa-para-gerar-e-validar-cpf-e-cnpj     
      * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
      */
     public static void validar(String numero) throws IllegalCnpjException {
