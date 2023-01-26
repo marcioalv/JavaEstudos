@@ -11,7 +11,7 @@
  *         Incluídos métodos: removerEspacos(), substituir(), reverter(), replicar(),
  *                            recortar(), recortarEsquerda(), recortarDireita(),
  *                            preencher(), preencherEsquerda(), preencherDireita().
- *                            contem().
+ *                            contem() e formatarCapitalizedCase().
  */
 
 /**
@@ -278,4 +278,16 @@ public class UtilsString {
         }
         return numeros;
     }
+
+    /**
+     * Método público estático para formatar um texto no padrão "capitalized case".
+     * @param texto Texto original.
+     * @return Texto formatado.
+     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @version 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     */
+    public static String formatarCapitalizedCase(String texto) {
+        return "";
+    }    
 }
