@@ -6,12 +6,14 @@
  * Outras informações podem ser obtidas em:
  *     https://www.doxcode.dev.br 
  *
- * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0.
+ * Autor(es): Marcio Alves (marcioalv@yahoo.com.br)
+ *
+ * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
  */
 
 /**
  * Classe pública representando um número de CPF/CNPJ.
- * @author Marcio Alves (marcioalv@yahoo.com.br)
+ * @author Marcio Alves
  * @version 1.0.0
  */
 public class CpfCnpj {
@@ -23,9 +25,9 @@ public class CpfCnpj {
     
     /**
      * Construtor público padrão somente limpa os atributos.
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public CpfCnpj() {
         this.limpar();
@@ -35,9 +37,9 @@ public class CpfCnpj {
      * Construtor público que inicializa o número do CPF/CNPJ.
      * @param numero Número do CPF/CNPJ.
      * @throws IllegalCpfException Caso o número do CPF/CNPJ informado seja inconsistente.     
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public CpfCnpj(String numero) throws IllegalCpfCnpjException {
         this.limpar();
@@ -48,9 +50,9 @@ public class CpfCnpj {
      * Construtor público que inicializa o número do CPF/CNPJ.
      * @param numero Número do CPF/CNPJ.
      * @throws IllegalCpfCnpjException Caso o número do CPF/CNPJ informado seja inconsistente.     
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (verão 1.0.0).
      */
     public CpfCnpj(long numero) throws IllegalCpfCnpjException {
         this.limpar();
@@ -61,9 +63,9 @@ public class CpfCnpj {
      * Método público para atribuir um número de CPF/CNPJ.
      * @param numero Número do CPF/CNPJ.
      * @throws IllegalCpfException Caso o número do CPF/CNPJ informado seja inconsistente.
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0     
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public void setNumero(String numero) throws IllegalCpfCnpjException {
         try {
@@ -80,9 +82,9 @@ public class CpfCnpj {
      * Método público para atribuir um número de CPF/CNPJ.
      * @param numero Número do CPF/CNPJ.
      * @throws IllegalCpfException Caso o número do CPF/CNPJ informado seja inconsistente.
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0     
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public void setNumero(long numero) throws IllegalCpfCnpjException {
         try {
@@ -98,9 +100,9 @@ public class CpfCnpj {
     /**
      * Método público para recuperar o número do CPF/CNPJ desformatado.
      * @return Número do CPF/CNPJ desformatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0     
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public String getNumero() {
         return UtilsCpfCnpj.desformatar(String.valueOf(this.numero));
@@ -109,9 +111,9 @@ public class CpfCnpj {
     /**
      * Método público para recuperar o número do CPF/CNPJ desformatado.
      * @return Número do CPF/CNPJ desformatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0     
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public long getNumeroLong() {
         return this.numero;
@@ -120,9 +122,9 @@ public class CpfCnpj {
     /**
      * Método público para recuperar o número do CPF/CNPJ formatado.
      * @return Número do CPF/CNPJ formatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0     
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).   
      */
     public String getNumeroFormatado() {
         return UtilsCpfCnpj.formatar(this.numero);
@@ -130,9 +132,9 @@ public class CpfCnpj {
     
     /**
      * Método público para limpar os atributos da classe.
-     * @author Marcio Alves (marcioalv@yahoo.com.br)
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */        
     public void limpar() {
         this.numero = 0;

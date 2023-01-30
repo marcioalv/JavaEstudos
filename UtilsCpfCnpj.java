@@ -4,14 +4,16 @@
  * Copyright (C) 2023 DoxCode Tecnologia e Informação LTDA 
  *
  * Outras informações podem ser obtidas em:
- *     https://www.doxcode.dev.br 
+ *     https://www.doxcode.dev.br
  *
- * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0.
+ * Autor(es): Marcio Alves (marcioalv@yahoo.com.br)   
+ *
+ * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
  */
  
 /**
  * Classe pública com métodos estáticos úteis para tratar CPFs e CNPJs.
- * @author Marcio Alves (marcioalv@yahoo.com.br)
+ * @author Marcio Alves
  * @version 1.0.1
  */
 public class UtilsCpfCnpj {
@@ -35,6 +37,7 @@ public class UtilsCpfCnpj {
      * Método público estático para avaliar se o número é um CPF.
      * @param numero Número que será avaliado.
      * @return TRUE se o número for de um CPF.
+     * Criado em 26/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public static boolean isCpf(String numero) {
         return (numero.length() <= UtilsCpf.QUANTIDADE_MAXIMA_DIGITOS);
@@ -44,6 +47,7 @@ public class UtilsCpfCnpj {
      * Método público estático para avaliar se o número é um CPF.
      * @param numero Número que será avaliado.
      * @return TRUE se o número for de um CPF.
+     * Criado em 26/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public static boolean isCpf(long numero) {
         return isCpf(String.valueOf(numero));
@@ -53,6 +57,7 @@ public class UtilsCpfCnpj {
      * Método público estático para avaliar se o número é um CNPJ.
      * @param numero Número que será avaliado.
      * @return TRUE se o número for de um CNPJ.
+     * Criado em 26/Janeiro/2023 por Marcio Alves (versão 1.0.0).     
      */
     public static boolean isCnpj(String numero) {
         return (numero.length() > UtilsCpf.QUANTIDADE_MAXIMA_DIGITOS &&
@@ -63,6 +68,7 @@ public class UtilsCpfCnpj {
      * Método público estático para avaliar se o número é um CNPJ.
      * @param numero Número que será avaliado.
      * @return TRUE se o número for de um CNPJ.
+     * Criado em 26/Janeiro/2023 por Marcio Alves (versão 1.0.0).     
      */
     public static boolean isCnpj(long numero) {
         return isCnpj(String.valueOf(numero));
@@ -72,9 +78,9 @@ public class UtilsCpfCnpj {
      * Método público estático para desformatar um número de CPF/CNPJ.
      * @param numero Número do CPF/CNPJ que será desformatado.
      * @return Número do CPF/CNPJ desformatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */    
     public static String desformatar(String numero) {
         String retorno = "";
@@ -87,9 +93,9 @@ public class UtilsCpfCnpj {
      * Método público estático para formatar um número de CPF/CNPJ.
      * @param numero Número do CPF/CNPJ que será formatado.
      * @return Número do CPF/CNPJ formatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public static String formatar(String numero) {
         String retorno = "";        
@@ -109,9 +115,9 @@ public class UtilsCpfCnpj {
      * Método público estático para formatar um número de CPF/CNPJ.
      * @param numero Número do CPF/CNPJ que será formatado.
      * @return Número do CPF/CNPJ formatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static String formatar(long numero) {
         return UtilsCpfCnpj.formatar(String.valueOf(numero));
@@ -121,9 +127,9 @@ public class UtilsCpfCnpj {
      * Método público estático para validar um número de CPF/CNPJ.
      * @param numero Número do CPF/CNPJ que será validado.
      * @throws IllegalCpfCnpjException Caso o CPF/CNPJ informado seja inconsistente. 
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public static void validar(String numero) throws IllegalCpfCnpjException {
         try {
@@ -139,9 +145,9 @@ public class UtilsCpfCnpj {
      * Método público estático para validar um número de CPF/CNPJ.
      * @param numero Número do CPF/CNPJ que será validado.
      * @throws IllegalCpfCnpjException Caso o CPF/CNPJ informado seja inconsistente. 
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static void validar(long numero) throws IllegalCpfCnpjException {
         validar(String.valueOf(numero));

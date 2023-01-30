@@ -6,8 +6,10 @@
  * Outras informações podem ser obtidas em:
  *     https://www.doxcode.dev.br 
  *
- * (1) Criado em 24/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0.
- * (2) Alterado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.1.
+ * Autor(es): Marcio Alves (marcioalv@yahoo.com.br)  
+ *
+ * (1) Criado em 24/Janeiro/2023 por Marcio Alves (versão 1.0.0).
+ * (2) Alterado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.1):
  *         Correção no método desformatar() para preencher com zeros à esquerda.
  *         Criados métodos validar(String) e validar(long).
  */
@@ -16,7 +18,7 @@
 
 /**
  * Classe pública com métodos estáticos úteis para tratar CPFs.
- * @author Marcio Alves (marcioalv@yahoo.com.br)
+ * @author Marcio Alves
  * @version 1.0.1
  */
 public class UtilsCpf {
@@ -45,14 +47,14 @@ public class UtilsCpf {
      * Método público estático para desformatar um número de CPF.
      * @param numero Número do CPF que será desformatado.
      * @return Número do CPF desformatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.1
-     * Criado em 24/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
-     * Alterado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.1
+     * Criado em 24/Janeiro/2023 por Marcio Alves (versão 1.0.0).
+     * Alterado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.1):
      *     Preenchido com zeros à esquerda.
      */    
     public static String desformatar(String numero) {
-        String cpf = UtilsString.somenteNumeros(numero);
+        String cpf = UtilsString.extrairSomenteNumeros(numero);
         cpf = UtilsString.recortarDireita(cpf, QUANTIDADE_MAXIMA_DIGITOS);
         cpf = UtilsString.preencherEsquerda(cpf, "0", QUANTIDADE_MAXIMA_DIGITOS);
         return cpf;
@@ -62,9 +64,9 @@ public class UtilsCpf {
      * Método público estático para formatar um número de CPF.
      * @param numero Número do CPF que será formatado.
      * @return Número do CPF formatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 24/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 24/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static String formatar(String numero) {
         String cpf = desformatar(numero);        
@@ -75,9 +77,9 @@ public class UtilsCpf {
      * Método público estático para formatar um número de CPF.
      * @param numero Número do CPF que será formatado.
      * @return Número do CPF formatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 24/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 24/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static String formatar(long numero) {
         return formatar(String.valueOf(numero));
@@ -87,11 +89,11 @@ public class UtilsCpf {
      * Método público estático para validar um número de CPF.<br/>
      * @param numero Número do CPF que será validado.
      * @throws IllegalCpfException Caso o CPF informado seja inconsistente. 
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
      * Algoritmo originalmente escrito na web por Wolmir Cezer Garbin em 17/Novembro/2017:
      *     https://receitasdecodigo.com.br/java/classe-java-completa-para-gerar-e-validar-cpf-e-cnpj
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static void validar(String numero) throws IllegalCpfException {
         //
@@ -180,9 +182,9 @@ public class UtilsCpf {
      * Método público estático para validar um número de CPF.
      * @param numero Número do CPF que será validado.
      * @throws IllegalCpfException Caso o CPF informado seja inconsistente. 
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static void validar(long numero) throws IllegalCpfException {
         String cpf = String.valueOf(numero);

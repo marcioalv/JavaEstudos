@@ -1,0 +1,40 @@
+{
+    "estrangeiro": false,
+    "pessoa": "FISICA",
+    "cpfCnpj": "25698745614",
+    "nome": "Marcio Alves",
+    "sexo": "MASCULINO",
+    "telefone": null,
+    "celular": {"ddi": "+55",
+                "ddd": "41",
+                "numero": "9945697589"},
+    "email": "marcio.alves@gmail.com",
+    "endereco": {"logradouro": "Rua Brasileio Itiberê",
+                 "numero": "1258",
+                 "complemento": "apartamento 809",
+                 "bairro": "Rebouças",
+                 "cidade": "Curitiba",
+                 "uf": "PR",
+                 "cep": "80569789"}
+}
+
+{
+    "estrangeiro": false,    
+    "pessoa": "JURIDICA",
+    "cpfCnpj": "76535111000164",
+    "razaoSocial": "Bergerson Joias e Relogios LTDA",    
+    "inscricaoEstadual": "ISENTO",
+    "inscricaoMunicipal": "ISENTO",
+    "telefone": {"ddi": "+55",
+                 "ddd": "41",
+                 "numero": "33225333"},
+    "celular": null,
+    "email": "contato@bergerson.com",
+    "endereco": {"logradouro": "Rua Desembargador Ermelino de Leão",
+                 "numero": "433",
+                 "complemento": "",
+                 "bairro": "São Francisco",
+                 "cidade": "Curitiba",
+                 "uf": "PR",
+                 "cep": "80410230"}
+}

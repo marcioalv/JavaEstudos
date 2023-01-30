@@ -4,16 +4,18 @@
  * Copyright (C) 2023 DoxCode Tecnologia e Informação LTDA 
  *
  * Outras informações podem ser obtidas em:
- *     https://www.doxcode.dev.br 
+ *     https://www.doxcode.dev.br
  *
- * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0.
+ * Autor(es): Marcio Alves (marcioalv@yahoo.com.br) 
+ *
+ * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
  */
  
  import java.util.InputMismatchException;
 
 /**
  * Classe pública com métodos estáticos úteis para tratar CNPJs.
- * @author Marcio Alves (marcioalv@yahoo.com.br)
+ * @author Marcio Alves
  * @version 1.0.0
  */
 public class UtilsCnpj {
@@ -44,12 +46,12 @@ public class UtilsCnpj {
      * Método público estático para desformatar um número de CNPJ.
      * @param numero Número do CNPJ que será desformatado.
      * @return Número do CNPJ desformatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */    
     public static String desformatar(String numero) {
-        String cnpj = UtilsString.somenteNumeros(numero);
+        String cnpj = UtilsString.extrairSomenteNumeros(numero);
         cnpj = UtilsString.recortarDireita(cnpj, QUANTIDADE_MAXIMA_DIGITOS);
         cnpj = UtilsString.preencherEsquerda(cnpj, "0", QUANTIDADE_MAXIMA_DIGITOS);
         return cnpj;
@@ -59,9 +61,9 @@ public class UtilsCnpj {
      * Método público estático para formatar um número de CNPJ.
      * @param numero Número do CNPJ que será formatado.
      * @return Número do CNPJ formatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0).
      */
     public static String formatar(String numero) {
         String cnpj = desformatar(String.valueOf(numero));
@@ -72,9 +74,9 @@ public class UtilsCnpj {
      * Método público estático para formatar um número de CNPJ.
      * @param numero Número do CNPJ que será formatado.
      * @return Número do CNPJ formatado.
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static String formatar(long numero) {
         return formatar(String.valueOf(numero));        
@@ -84,11 +86,11 @@ public class UtilsCnpj {
      * Método público estático para validar um número de CNPJ.<br/>
      * @param numero Número do CNPJ que será validado.
      * @throws IllegalCnpjException Caso o CNPJ informado seja inconsistente. 
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
      * Algoritmo originalmente escrito na web por Wolmir Cezer Garbin em 17/Novembro/2017:
      *     https://receitasdecodigo.com.br/java/classe-java-completa-para-gerar-e-validar-cpf-e-cnpj     
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static void validar(String numero) throws IllegalCnpjException {
         //
@@ -178,9 +180,9 @@ public class UtilsCnpj {
      * Método público estático para validar um número de CNPJ.
      * @param numero Número do CNPJ que será validado.
      * @throws IllegalCnpjException Caso o CNPJ informado seja inconsistente. 
-     * @author Marcio Alves (marcioalv@yahoo.com.br).
+     * @author Marcio Alves
      * @version 1.0.0
-     * Criado em 25/Janeiro/2023 por Marcio Alves (marcioalv@yahoo.com.br) --> versão 1.0.0
+     * Criado em 25/Janeiro/2023 por Marcio Alves (versão 1.0.0)
      */
     public static void validar(long numero) throws IllegalCnpjException {
         String cnpj = String.valueOf(numero);
