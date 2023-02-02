@@ -16,3 +16,7 @@ Cnpj.java
 CpfCnpj.java
 
 Testes.java
+
+TipoDriverJdbc.java
+ParametrosConexaoJdbc.java
+SqlServerTestes.java

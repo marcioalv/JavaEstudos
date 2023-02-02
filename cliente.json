@@ -1,4 +1,5 @@
 {
+    "empresa_id": 
     "estrangeiro": false,
     "pessoa": "FISICA",
     "cpfCnpj": "25698745614",
@@ -9,7 +10,7 @@
                 "ddd": "41",
                 "numero": "9945697589"},
     "email": "marcio.alves@gmail.com",
-    "endereco": {"logradouro": "Rua Brasileio Itiberê",
+    "endereco": {"logradouro": "Rua Brasílio Itiberê",
                  "numero": "1258",
                  "complemento": "apartamento 809",
                  "bairro": "Rebouças",

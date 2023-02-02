@@ -1,0 +1,1 @@
+java -classpath @biblioteca.txt SqlServerTestes
